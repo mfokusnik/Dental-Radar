@@ -10,7 +10,7 @@ async function render(){const all=await loadDict(),code=lang(),t=all[code]||all.
  const page=document.body.dataset.page;
  if(page==="home"){const h=t.home;tx("eye",h[0]);tx("hero",h[1]);tx("heroText",h[2]);tx("open",h[3]);tx("contact",h[4]);tx("featureEye",u.featureEye);tx("featuresTitle",h[5]);tx("featuresText",u.featureLead);tx("productEye",u.productEye);tx("shotsTitle",t.shotsTitle);tx("shotsText",t.shotsText);tx("trustEye",u.trustEye);tx("trustTitle",h[7]);tx("trustText",h[8]);tx("legalEye",u.legalEye);tx("legalTitle",h[9]);tx("legalText",h[10]);
   html("heroChips",u.heroChips.map(x=>`<span class="hero-chip">${x}</span>`).join(""));
-  html("features",t.features.map((x,i)=>`<article class="feature"><div class="feature-index">0${i+1}</div><div class="feature-mark">${["↗","◎","◇","▶","✦","＋"][i]}</div><h3>${x[0]}</h3><p>${x[1]}</p></article>`).join(""));
+  html("featureGrid",t.features.map((x,i)=>`<article class="feature"><div class="feature-index">0${i+1}</div><div class="feature-mark">${["↗","◎","◇","▶","✦","＋"][i]}</div><h3>${x[0]}</h3><p>${x[1]}</p></article>`).join(""));
   html("trust",t.trust.map(x=>`<div class="trust-item"><span class="check">✓</span><span>${x}</span></div>`).join(""));
   u.screens.forEach((v,i)=>tx(`screen${i+1}`,v));
   tx("pc",t.nav[2]);tx("pct",t.cards[0]);tx("dc",t.nav[3]);tx("dct",t.cards[1]);tx("tc",u.legalCommunity);tx("tct",t.cards[2]);document.title="Dental Radar — "+h[0];
